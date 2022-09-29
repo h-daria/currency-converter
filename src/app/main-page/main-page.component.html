@@ -1,1 +1,58 @@
-<p>main-page works!</p>
+<div id="main-container">
+    <app-header></app-header>
+
+    <div id="content-container">
+        <h1> Convert currency</h1>
+        <div id="currencies">
+            <div class="currency-container">
+                <span> From </span>
+                <mat-form-field class="mat-form-field" appearance="outline">
+                    <mat-label>{{ selectedCurrency1 }}</mat-label>
+                    <input [ngModel]="amount1"
+                            (input)="convertAmount2($event)"
+                            matInput 
+                            type="number" 
+                            placeholder="Currency">
+                    <button class="icon-btn"
+                            mat-icon-button matSuffix 
+                            [matMenuTriggerFor]="menu1">
+                        <mat-icon class="material-symbols-outlined2"> keyboard_arrow_down </mat-icon>
+                    </button>
+                    <mat-menu #menu1="matMenu">
+                        <button mat-menu-item 
+                                *ngFor="let currency of currencies" 
+                                (click)="selectCurrency1(currency)">
+                            {{ currency }}
+                        </button>
+                    </mat-menu>
+                </mat-form-field>
+            </div>
+            <mat-icon class="material-symbols-outlined">
+                    sync_alt
+            </mat-icon>
+            <div class="currency-container">
+                <span> To </span>
+                <mat-form-field class="mat-form-field" appearance="outline">
+                    <mat-label>{{ selectedCurrency2}}</mat-label>
+                    <input [ngModel]="amount2"
+                            (input)="convertAmount1($event)"
+                            matInput 
+                            type="number" 
+                            placeholder="Currency">
+                    <button class="icon-btn" 
+                            mat-icon-button matSuffix 
+                            [matMenuTriggerFor]="menu2">
+                        <mat-icon class="material-symbols-outlined2"> keyboard_arrow_down </mat-icon>
+                    </button>
+                    <mat-menu #menu2="matMenu">
+                        <button mat-menu-item 
+                                *ngFor="let currency of currencies" 
+                                (click)="selectCurrency2(currency)">
+                            {{ currency }}
+                        </button>
+                    </mat-menu>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</div>

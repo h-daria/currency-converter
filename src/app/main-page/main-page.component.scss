@@ -1,0 +1,68 @@
+#main-container {
+    height: 100%;
+    background: linear-gradient(45deg, rgb(16, 2, 29), rgb(29, 0, 56) 55%, rgb(60, 9, 108));
+}
+
+#content-container {
+    margin: 5rem auto;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    width: 60%;
+    height: 40%;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 2px 30px rgba($color: #040404, $alpha: 1.0);
+}
+
+#currencies {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+::ng-deep .mat-form-field-appearance-outline:hover .mat-form-field-outline {
+    color: rgb(110, 53, 133) !important;
+}
+
+.material-symbols-outlined {
+    color: grey;
+    margin: 0.7rem 1rem 0;
+}
+
+.material-symbols-outlined2 {
+    color: grey;
+    margin: 0;
+   
+    &:hover {
+        color: rgb(110, 53, 133);
+    }
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+}
+
+.icon-btn {
+    border: none;
+    background-color: whitesmoke;
+    font-size: 1rem;
+    padding: 0;
+}
+
+h1 {
+    color: rgb(65, 65, 65);
+    font-weight: 400;
+}
+
+span {
+    display: block;
+    text-align: start;
+    margin: 0.5rem 0.5rem;
+    color: grey;
+}

@@ -1,0 +1,63 @@
+#container {
+    height: 8%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+}
+
+.material-symbols-outlined {
+    color: whitesmoke;
+}
+
+h1 {
+    font-weight: 300;
+    color: whitesmoke;
+}
+
+#currencies {
+    width: 25%;
+    display: flex;
+}
+
+.currency-container {
+    width: 50%;
+    height: 100%;
+    background-color: rgba($color: #ffffff, $alpha: 0.2);
+    border-radius: 15px;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+#first-currency {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 1px;
+}
+
+#second-currency {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+img {
+    width: 25%;
+    height: 25;
+    border-radius: 6px;
+    margin-right: 0.2rem;
+}
+
+span {
+    font-weight: 400;
+    color: whitesmoke;
+}
+
+.response {
+    margin-left: 1.5rem;
+}
+

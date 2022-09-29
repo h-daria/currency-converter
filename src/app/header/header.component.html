@@ -1,1 +1,21 @@
-<p>header works!</p>
+<div id="container">
+    <div id="logo">
+        <mat-icon class="material-symbols-outlined">
+            keyboard_double_arrow_right
+        </mat-icon>
+        <h1>Easy Convert</h1>
+    </div>
+
+    <div id="currencies">
+        <div id="first-currency" class="currency-container">
+            <img src="../../assets/images/united-states-flag-icon.svg" alt="USA">
+            <span > {{ currencies[0] }} </span>
+            <span class="response">{{ resultUSD | currency:'USD':'symbol':'2.2-2' }}</span>
+        </div>
+        <div id="second-currency" class="currency-container">
+            <img src="../../assets/images/europe-flag-icon.svg" alt="EUR">
+            <span>{{ currencies[1] }}</span>
+            <span class="response">{{ resultEUR |  currency:'EUR':'symbol':'2.2-2'}}</span>
+        </div>
+    </div>
+</div>

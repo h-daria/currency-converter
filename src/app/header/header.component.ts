@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { DataService } from '../data.service';
 
 @Component({
@@ -12,6 +13,7 @@ export class HeaderComponent implements OnInit {
   currencies: string[] = ['USD', 'EUR']
   resultUSD: number = 0;
   resultEUR: number = 0;
+  subscription!: Subscription;
 
   constructor( private dataService: DataService) { }
 
@@ -19,8 +21,12 @@ export class HeaderComponent implements OnInit {
     this.getRates();
   }
 
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
   getRates() {
-    this.dataService.getCurrencyData(this.baseCurrency)
+    this.subscription = this.dataService.getCurrencyData(this.baseCurrency)
         .subscribe( data => {
           this.currencyJSON = JSON.stringify(data);
           this.currencyJSON = JSON.parse(this.currencyJSON);
@@ -28,15 +34,8 @@ export class HeaderComponent implements OnInit {
           const prop = this.currencies[0] as ObjectKey;
           const prop2 = this.currencies[1] as ObjectKey;
           this.resultUSD = 1 / this.currencyJSON.rates[prop];
-          // this.resultUSD = this.cutInteger(this.resultUSD);
           this.resultEUR = 1 / this.currencyJSON.rates[prop2];
-          // this.resultEUR = this.cutInteger(this.resultEUR);
         })
-  }
-
-  cutInteger(num: number) {
-    num = Number(num.toString().slice(0, 5))
-    return num;
   }
 
 }
